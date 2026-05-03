@@ -17,18 +17,6 @@ tokio = { version = "1.52", features = [
 criterion = { version = "0.8.2", features = ["async_tokio", "html_reports"] }
 
 [[bench]]
-name = "async_kanal_tokio"
-harness = false
-
-[[bench]]
-name = "sync_kanal_threads"
-harness = false
-
-[[bench]]
-name = "mixed_sync_workers_tokio_collector"
-harness = false
-
-[[bench]]
 name = "all_pipelines"
 harness = false
 
