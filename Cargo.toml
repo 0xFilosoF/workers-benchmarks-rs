@@ -1,0 +1,43 @@
+[package]
+name = "workers-benchmarks-rs"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+kanal = "0.1.1"
+num_cpus = "1.17.0"
+tokio = { version = "1.52", features = [
+  "macros",
+  "rt-multi-thread",
+  "sync",
+  "time",
+] }
+
+[dev-dependencies]
+criterion = { version = "0.8.2", features = ["async_tokio", "html_reports"] }
+
+[[bench]]
+name = "async_kanal_tokio"
+harness = false
+
+[[bench]]
+name = "sync_kanal_threads"
+harness = false
+
+[[bench]]
+name = "mixed_sync_workers_tokio_collector"
+harness = false
+
+[[bench]]
+name = "all_pipelines"
+harness = false
+
+# https://rust-lang.github.io/rust-clippy/master/index.html
+[workspace.lints.clippy]
+clone_on_ref_ptr = "deny"
+manual_let_else = "warn"
+used_underscore_binding = "deny"
+
+[profile.release]
+lto = true
+codegen-units = 1
