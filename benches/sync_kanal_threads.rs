@@ -1,7 +1,9 @@
 mod common;
 
-use criterion::{BenchmarkId, Criterion, criterion_group, criterion_main};
-use workers_benchmarks_rs::{BenchConfig, WorkProfile, run_sync_thread_workers};
+use {
+    criterion::{BenchmarkId, Criterion, criterion_group, criterion_main},
+    workers_benchmarks_rs::{BenchConfig, WorkProfile, run_sync_thread_workers},
+};
 
 fn bench_sync_kanal_threads(c: &mut Criterion) {
     let mut group = c.benchmark_group("sync_kanal_threads");

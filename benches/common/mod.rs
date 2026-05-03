@@ -1,6 +1,4 @@
-use std::time::Duration;
-
-use criterion::Criterion;
+use {criterion::Criterion, std::time::Duration};
 
 pub fn criterion_config() -> Criterion {
     Criterion::default()

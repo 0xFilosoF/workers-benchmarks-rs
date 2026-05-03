@@ -1,8 +1,9 @@
-use tokio::task::JoinSet;
-
-use crate::{
-    config::BenchConfig,
-    work::{Job, cpu_work, job_for_index},
+use {
+    crate::{
+        config::BenchConfig,
+        work::{Job, cpu_work, job_for_index},
+    },
+    tokio::task::JoinSet,
 };
 
 pub async fn run_async_tokio_workers(config: BenchConfig) -> u64 {

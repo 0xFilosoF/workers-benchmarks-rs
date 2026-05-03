@@ -1,7 +1,9 @@
 mod common;
 
-use criterion::{BenchmarkId, Criterion, criterion_group, criterion_main};
-use workers_benchmarks_rs::{BenchConfig, WorkProfile, run_async_tokio_workers};
+use {
+    criterion::{BenchmarkId, Criterion, criterion_group, criterion_main},
+    workers_benchmarks_rs::{BenchConfig, WorkProfile, run_async_tokio_workers},
+};
 
 fn bench_async_kanal_tokio(c: &mut Criterion) {
     let runtime = tokio::runtime::Runtime::new().expect("tokio runtime must start");

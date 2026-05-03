@@ -1,9 +1,11 @@
 mod common;
 
-use criterion::{BenchmarkId, Criterion, criterion_group, criterion_main};
-use workers_benchmarks_rs::{
-    BenchConfig, WorkProfile, run_async_tokio_workers, run_mixed_sync_workers_tokio_collector,
-    run_sync_thread_workers,
+use {
+    criterion::{BenchmarkId, Criterion, criterion_group, criterion_main},
+    workers_benchmarks_rs::{
+        BenchConfig, WorkProfile, run_async_tokio_workers, run_mixed_sync_workers_tokio_collector,
+        run_sync_thread_workers,
+    },
 };
 
 fn bench_all_pipelines(c: &mut Criterion) {
