@@ -1,5 +1,5 @@
 .DEFAULT_GOAL = help
-.PHONY: lint lint-fix format format-check build bench help
+.PHONY: lint lint-fix format format-check run bench help
 
 ##
 ## Linters:
@@ -17,8 +17,8 @@ format-check: ## - rustfmt check
 
 ##
 ## Run:
-build: ## - Build release
-	cargo build --release
+run: ## - Run release
+	cargo run --release
 
 bench: ## - Benchmark with criterion
 	cargo bench
